@@ -58,18 +58,19 @@
 
 ## **Section 5: Project Management**
 ### Schedule
-  -We do believe completion of our system is feasible, and we have no specific set meeting times. We will generally meet face-to-face in class, and utilize discord to work as a group while away from class.
-Week of 1/27<br/>
-Week of 2/3<br/>
-Week of 2/10<br/>
-Week of 2/17<br/>
-Week of 2/24<br/>
-Week of 3/2<br/>
-Week of 3/9<br/>
-Week of 3/16<br/>
-Week of 3/23<br/>
-Week of 3/30<br/>
-Week of 4/6
+  - We do believe completion of our system is feasible, and we have no specific set meeting times. We will generally meet face-to-face in class, and utilize discord to work as a group while away from class. A broad schedule overview is as follows:
+  <br/>
+
+**Week of 1/27** - Become familiar with Flutter/Dart, polish proposal<br/>
+**Week of 2/3**  - Continue Learning/Experimenting with Flutter and Dart<br/>
+**Week of 2/10** - Design and implement a minimum viable system<br/>
+**Week of 2/17** - Iteratively improve minimum viable system<br/>
+**Week of 2/24** - Research potential updates/additional functionality<br/>
+**Week of 3/2**  - Choose new features we want, and begin impleentation<br/>
+**Week of 3/9**  - Iteratively test and refine each change<br/>
+**Week of 3/16** - Iteratively test and refine solution<br/>
+**Week of 3/23** - Complete project implementation<br/>
+
 ### Constraints
 - idk
 - Ethically, there will always be moral concerns with accepting/offering rides with/to people you are not completely familiar with. Also, privacy issues...
