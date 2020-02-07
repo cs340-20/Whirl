@@ -1,4 +1,4 @@
-# whirl
+# Whirl
 
 A new Flutter project.
 
