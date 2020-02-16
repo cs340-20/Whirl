@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "228205956886",
+    "firebase_url": "https://whirl-ab7a6.firebaseio.com",
+    "project_id": "whirl-ab7a6",
+    "storage_bucket": "whirl-ab7a6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:228205956886:android:a51db8a50b42f5e287ca37",
+        "android_client_info": {
+          "package_name": "com.example.whirl"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "228205956886-rr749kt8s74hsqaldb5371j7nl15mfoc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1p3gheL3sS0vV28iRoW9bH47cfO4pAEk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "228205956886-rr749kt8s74hsqaldb5371j7nl15mfoc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
