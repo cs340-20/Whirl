@@ -1,3 +1,5 @@
+//this is the "root-level(project-level)" build.gradle -TM
+
 buildscript {
     ext.kotlin_version = '1.3.50'
     repositories {
@@ -9,8 +11,9 @@ buildscript {
         classpath 'com.android.tools.build:gradle:3.5.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
-    // Added the following line for Firebase
-      classpath 'com.google.gms:google-services:4.3.3'  // Google Services plugin
+
+        // Added the following line for Firebase - TM
+        classpath 'com.google.gms:google-services:4.3.3'  // Google Services plugin
     }
 }
 
