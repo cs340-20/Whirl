@@ -46,7 +46,7 @@ class LoginPageState extends State<LoginPage> with SingleTickerProviderStateMixi
     return new Scaffold(
       backgroundColor: Colors.white,
       body: new Stack(
-        fit: StackFit.expand,
+      fit: StackFit.expand,
         children: <Widget>[
           new Image(
             image: new AssetImage("assets/Whirl-flyer.png"),
@@ -77,7 +77,6 @@ class LoginPageState extends State<LoginPage> with SingleTickerProviderStateMixi
                         new TextFormField(
                         decoration: new InputDecoration(
                           labelText: "Enter Email",
-
                         ),
                         keyboardType: TextInputType.emailAddress,
                        ),
