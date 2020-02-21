@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:whirl/loginscreen.dart';
 
 void main() => runApp(MyApp());
+// void main() => runApp(SignInPage()); // for auth testing -TM
+
+
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
