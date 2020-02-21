@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whirl/auth.dart';
 // import 'package:whirl/auth.dart';
 // import 'package:whirl/loginscreen.dart';
 
@@ -12,6 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // loginWithEmail("tuckermiles70@gmail.com", "whirl123");
+    // signUp("tuckermiles70@gmail.com", "whirl123");
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -108,7 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: loginWithEmail,//loginWithEmail,//_incrementCounter,
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
