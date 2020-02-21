@@ -14,6 +14,8 @@ FirebaseAuth auth = FirebaseAuth.instance;
 Future < FirebaseUser > signIn(String email, String password) async {    
     try {    
         final FirebaseUser user = (await auth.signInWithEmailAndPassword(email: email, password: password)).user;
+
+        print(user.displayName);
         
         assert(user != null);    
         assert(await user.getIdToken() != null);    
@@ -38,6 +40,10 @@ Future < FirebaseUser > signUp(email, password) async {
     }  
 }   
 
+loginWithEmail(String email, String password) {
+  signIn(email, password);
+}
+
 // Future<FirebaseUser> _handleSignIn() async {
 //   final GoogleSignInAccount googleUser = await _googleSignIn.signIn();
 //   final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
@@ -51,3 +57,4 @@ Future < FirebaseUser > signUp(email, password) async {
 //   print("signed in " + user.displayName);
 //   return user;
 // }
+

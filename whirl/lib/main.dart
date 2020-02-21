@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// import 'package:whirl/auth.dart';
 // import 'package:whirl/loginscreen.dart';
 
 void main() => runApp(MyApp());
@@ -10,6 +11,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    // loginWithEmail("tuckermiles70@gmail.com", "whirl123");
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
