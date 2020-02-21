@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:whirl/auth.dart';
-// import 'package:whirl/auth.dart';
-// import 'package:whirl/loginscreen.dart';
 
 void main() => runApp(MyApp());
-// void main() => runApp(SignInPage()); // for auth testing -TM
-
-
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -110,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: loginWithEmail,//loginWithEmail,//_incrementCounter,
+        onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
