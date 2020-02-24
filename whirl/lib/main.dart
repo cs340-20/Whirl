@@ -6,6 +6,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    // loginWithEmail("tuckermiles70@gmail.com", "whirl123");
+    // signUp("tuckermiles70@gmail.com", "whirl123");
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
