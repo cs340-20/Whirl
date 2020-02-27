@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'auth.dart';
 
 void main() => runApp(new MyApp());
 
@@ -98,7 +99,9 @@ class LoginPageState extends State<LoginPage> with SingleTickerProviderStateMixi
                         child: new Text(
                           "Login"
                         ),
-                        onPressed: ()=>{},
+                        onPressed: ()=>{
+                          //auth stuff here...
+                        },
                         splashColor: Colors.redAccent,
                       ),
                     ],
