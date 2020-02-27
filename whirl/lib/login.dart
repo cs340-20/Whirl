@@ -27,6 +27,9 @@ class LoginPageState extends State<LoginPage> with SingleTickerProviderStateMixi
   AnimationController _iconanimationController;
   Animation<double> _iconAnimation;
 
+  final _usernameController = TextEditingController();
+  final _passwordController = TextEditingController();
+
   @override
   void initState(){
     super.initState();
@@ -76,18 +79,19 @@ class LoginPageState extends State<LoginPage> with SingleTickerProviderStateMixi
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
                         new TextFormField(
-                        decoration: new InputDecoration(
-                          labelText: "Enter Email",
-
-                        ),
-                        keyboardType: TextInputType.emailAddress,
+                          controller: _usernameController,
+                          decoration: new InputDecoration(
+                            labelText: "Enter Email",
+                          ),
+                          keyboardType: TextInputType.emailAddress,
                        ),
                        new TextFormField(
-                        decoration: new InputDecoration(
-                          labelText: "Enter Password",
-                        ),
-                        keyboardType: TextInputType.text,
-                        obscureText: true,
+                         controller: _passwordController,
+                          decoration: new InputDecoration(
+                            labelText: "Enter Password",
+                          ),
+                          keyboardType: TextInputType.text,
+                          obscureText: true,
                       ),
                       new Padding(padding: const EdgeInsets.only(top: 40.0),
                       ),
@@ -99,9 +103,7 @@ class LoginPageState extends State<LoginPage> with SingleTickerProviderStateMixi
                         child: new Text(
                           "Login"
                         ),
-                        onPressed: ()=>{
-                          //auth stuff here...
-                        },
+                        onPressed: _performLogin,
                         splashColor: Colors.redAccent,
                       ),
                     ],
@@ -114,5 +116,12 @@ class LoginPageState extends State<LoginPage> with SingleTickerProviderStateMixi
         ],
       ),
     );
+  }
+  
+    void _performLogin() {
+    String username = _usernameController.text;
+    String password = _passwordController.text;
+
+    print('login attempt: $username with $password');
   }
 }
