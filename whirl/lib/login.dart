@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:whirl/home.dart';
 import 'auth.dart';
 
 void main() => runApp(new MyApp());
@@ -117,11 +118,20 @@ class LoginPageState extends State<LoginPage> with SingleTickerProviderStateMixi
       ),
     );
   }
-  
-    void _performLogin() {
-    String username = _usernameController.text;
-    String password = _passwordController.text;
 
-    print('login attempt: $username with $password');
+void _performLogin() {
+  String email = _usernameController.text;
+  String password = _passwordController.text;
+
+  print('login attempt: $email with $password');
+
+  loginWithEmail(email, password);
+
+  if (curuser != null) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => ListRoute()),
+      );
   }
+}
 }
