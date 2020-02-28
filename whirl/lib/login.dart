@@ -6,26 +6,24 @@ import 'auth.dart';
 
 void main() => runApp(new MyApp());
 
-class MyApp extends StatelessWidget{
+class MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return new MaterialApp(
-      home: new LoginPage(),
-      theme: new ThemeData(
-        primarySwatch: Colors.blue
-      )
-    );
-
+        home: new LoginPage(),
+        theme: new ThemeData(primarySwatch: Colors.blue));
   }
 }
 
-class LoginPage extends StatefulWidget{
+class LoginPage extends StatefulWidget {
   @override
   State createState() => new LoginPageState();
 }
 
-class LoginPageState extends State<LoginPage> with SingleTickerProviderStateMixin{
-  Widget button;
+class LoginPageState extends State<LoginPage>
+    with SingleTickerProviderStateMixin {
+  Widget buttons;
+  bool loading = false;
 
   AnimationController _iconanimationController;
   Animation<double> _iconAnimation;
@@ -34,34 +32,38 @@ class LoginPageState extends State<LoginPage> with SingleTickerProviderStateMixi
   final _passwordController = TextEditingController();
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
     _iconanimationController = new AnimationController(
-      vsync: this,
-      duration: new Duration(milliseconds: 600)
-    );
-    _iconAnimation  = new CurvedAnimation(
-      parent: _iconanimationController,
-      curve: Curves.bounceOut
-    );
-    _iconAnimation.addListener(()=> this.setState(() {}));
+        vsync: this, duration: new Duration(milliseconds: 600));
+    _iconAnimation = new CurvedAnimation(
+        parent: _iconanimationController, curve: Curves.bounceOut);
+    _iconAnimation.addListener(() => this.setState(() {}));
     _iconanimationController.forward();
-
-    button = MaterialButton(
-      height: 40.0,
-      minWidth: 100.0,
-      color: Colors.teal,
-      textColor: Colors.white,
-      child: new Text(
-          "Login"
+    buttons = Column(children: <Widget>[
+      MaterialButton(
+        height: 40.0,
+        minWidth: 100.0,
+        color: Colors.teal,
+        textColor: Colors.white,
+        child: new Text("Login"),
+        onPressed: _performLogin,
+        splashColor: Colors.redAccent,
       ),
-      onPressed: _performLogin,
-      splashColor: Colors.redAccent,
-    );
+      MaterialButton(
+        height: 40.0,
+        minWidth: 100.0,
+        color: Colors.teal.shade800,
+        textColor: Colors.white,
+        child: new Text("Don't have an account? Sign Up"),
+        onPressed: () => _performSignUp(),
+        splashColor: Colors.redAccent,
+      )
+    ]);
   }
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return new Scaffold(
       backgroundColor: Colors.white,
       body: new Stack(
@@ -79,42 +81,42 @@ class LoginPageState extends State<LoginPage> with SingleTickerProviderStateMixi
               new FlutterLogo(
                 size: _iconAnimation.value * 100,
               ),
-              new Form(child: Theme(
-                data: new ThemeData(
-                  brightness: Brightness.dark,
-                  primarySwatch: Colors.teal,
-                  inputDecorationTheme: new InputDecorationTheme(
-                    labelStyle: new TextStyle(
-                      color: Colors.teal, fontSize: 20.0)
-                  ) ),
-
-                child: new Container(
-                  padding: const EdgeInsets.all(60.0),
-                  child: new Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
+              new Form(
+                child: Theme(
+                  data: new ThemeData(
+                      brightness: Brightness.dark,
+                      primarySwatch: Colors.teal,
+                      inputDecorationTheme: new InputDecorationTheme(
+                          labelStyle: new TextStyle(
+                              color: Colors.teal, fontSize: 20.0))),
+                  child: new Container(
+                    padding: const EdgeInsets.all(60.0),
+                    child: new Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
                         new TextFormField(
                           controller: _usernameController,
                           decoration: new InputDecoration(
                             labelText: "Enter Email",
                           ),
                           keyboardType: TextInputType.emailAddress,
-                       ),
-                       new TextFormField(
-                         controller: _passwordController,
+                        ),
+                        new TextFormField(
+                          controller: _passwordController,
                           decoration: new InputDecoration(
                             labelText: "Enter Password",
                           ),
                           keyboardType: TextInputType.text,
                           obscureText: true,
-                      ),
-                      new Padding(padding: const EdgeInsets.only(top: 40.0),
-                      ),
-                      button,
-                    ],
+                        ),
+                        new Padding(
+                          padding: const EdgeInsets.only(top: 40.0),
+                        ),
+                        loading? CircularProgressIndicator() : buttons,
+                      ],
+                    ),
                   ),
                 ),
-              ),
               )
             ],
           )
@@ -123,27 +125,37 @@ class LoginPageState extends State<LoginPage> with SingleTickerProviderStateMixi
     );
   }
 
-void _performLogin() {
-  String email = _usernameController.text;
-  String password = _passwordController.text;
+  void _performSignUp() {
+    String email = _usernameController.text;
+    String password = _passwordController.text;
 
-  print('login attempt: $email with $password');
+    print('Sign up attempt: $email with $password');
 
-  handleSignIn(email, password)
-      .then((FirebaseUser user) => print(user.email)).whenComplete(() =>
-      Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => ListRoute()))
-  ).catchError((e) => print(e));
-  setState(() {
-    button = CircularProgressIndicator();
-  });
+    signUp(email, password)
+        .then((FirebaseUser user) {
+          if (user != null) Navigator.push(
+            context, MaterialPageRoute(builder: (context) => ListRoute()));
+        })
+        .whenComplete(() => setState(() => loading = false))
+        .catchError((e) => print(e));
 
-  if (curuser != null) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => ListRoute()),
-      );
+    setState(() => loading = true);
   }
-}
+
+  void _performLogin() {
+    String email = _usernameController.text;
+    String password = _passwordController.text;
+
+    print('login attempt: $email with $password');
+
+    handleSignIn(email, password)
+        .then((FirebaseUser user) {
+          if (user != null) Navigator.push(
+            context, MaterialPageRoute(builder: (context) => ListRoute()));
+        })
+        .whenComplete(() => setState(() => loading = false))
+        .catchError((e) => print(e));
+
+    setState(() => loading = true);
+  }
 }

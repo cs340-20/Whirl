@@ -26,10 +26,11 @@ loginWithEmail(email, password) {
 //Usage Example:
 //signUp("tuckermiles70@gmail.com", "whirl123");
 //-TM
-signUp(email, password) async {
+Future<FirebaseUser> signUp(email, password) async {
   final FirebaseUser user = (await auth.createUserWithEmailAndPassword(
     email: email,
     password: password,
-  ))
-      .user;
+  )).user;
+  curuser = user;
+  return user;
 }
