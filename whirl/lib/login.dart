@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:whirl/home.dart';
@@ -24,6 +25,7 @@ class LoginPage extends StatefulWidget{
 }
 
 class LoginPageState extends State<LoginPage> with SingleTickerProviderStateMixin{
+  Widget button;
 
   AnimationController _iconanimationController;
   Animation<double> _iconAnimation;
@@ -44,6 +46,18 @@ class LoginPageState extends State<LoginPage> with SingleTickerProviderStateMixi
     );
     _iconAnimation.addListener(()=> this.setState(() {}));
     _iconanimationController.forward();
+
+    button = MaterialButton(
+      height: 40.0,
+      minWidth: 100.0,
+      color: Colors.teal,
+      textColor: Colors.white,
+      child: new Text(
+          "Login"
+      ),
+      onPressed: _performLogin,
+      splashColor: Colors.redAccent,
+    );
   }
 
   @override
@@ -55,7 +69,7 @@ class LoginPageState extends State<LoginPage> with SingleTickerProviderStateMixi
         children: <Widget>[
           new Image(
             image: new AssetImage("assets/Whirl-flyer.png"),
-            fit: BoxFit.cover, 
+            fit: BoxFit.cover,
             color: Colors.black87,
             colorBlendMode: BlendMode.darken,
           ),
@@ -68,12 +82,12 @@ class LoginPageState extends State<LoginPage> with SingleTickerProviderStateMixi
               new Form(child: Theme(
                 data: new ThemeData(
                   brightness: Brightness.dark,
-                  primarySwatch: Colors.teal, 
+                  primarySwatch: Colors.teal,
                   inputDecorationTheme: new InputDecorationTheme(
                     labelStyle: new TextStyle(
                       color: Colors.teal, fontSize: 20.0)
                   ) ),
-                
+
                 child: new Container(
                   padding: const EdgeInsets.all(60.0),
                   child: new Column(
@@ -96,17 +110,7 @@ class LoginPageState extends State<LoginPage> with SingleTickerProviderStateMixi
                       ),
                       new Padding(padding: const EdgeInsets.only(top: 40.0),
                       ),
-                      new MaterialButton(
-                        height: 40.0,
-                        minWidth: 100.0,
-                        color: Colors.teal,
-                        textColor: Colors.white,
-                        child: new Text(
-                          "Login"
-                        ),
-                        onPressed: _performLogin,
-                        splashColor: Colors.redAccent,
-                      ),
+                      button,
                     ],
                   ),
                 ),
@@ -125,7 +129,15 @@ void _performLogin() {
 
   print('login attempt: $email with $password');
 
-  loginWithEmail(email, password);
+  handleSignIn(email, password)
+      .then((FirebaseUser user) => print(user.email)).whenComplete(() =>
+      Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => ListRoute()))
+  ).catchError((e) => print(e));
+  setState(() {
+    button = CircularProgressIndicator();
+  });
 
   if (curuser != null) {
     Navigator.push(
