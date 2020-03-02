@@ -23,6 +23,7 @@ dependencies:
   firebase_analytics: ^5.0.2  # Added the dependency for the FlutterFire plugin for Google Analytics, might be able to remove this - TM
   firebase_auth: ^0.15.2 # Added for Firebase Auth - TM
   google_sign_in: ^4.1.4 # Added for google signin - TM
+  cloud_firestore: # Added for Firestore DB -TM
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
