@@ -71,16 +71,12 @@ class LoginPageState extends State<LoginPage>
         children: <Widget>[
           new Image(
             image: new AssetImage("assets/Whirl-flyer.png"),
-            fit: BoxFit.cover,
-            color: Colors.black87,
-            colorBlendMode: BlendMode.darken,
+            alignment: Alignment(0,-0,5),
           ),
           new Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              new FlutterLogo(
-                size: _iconAnimation.value * 100,
-              ),
+             
               new Form(
                 child: Theme(
                   data: new ThemeData(
