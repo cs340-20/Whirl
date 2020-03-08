@@ -65,13 +65,14 @@ class LoginPageState extends State<LoginPage>
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+      resizeToAvoidBottomInset : false,
       backgroundColor: Colors.white,
       body: new Stack(
         fit: StackFit.expand,
         children: <Widget>[
           new Image(
-            image: new AssetImage("assets/Whirl-flyer.png"),
-            alignment: Alignment(0,-0.5),
+            image: new AssetImage("assets/WhirlLogo144.png"),
+            alignment: Alignment(0,-0.7),
           ),
           new Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -91,6 +92,7 @@ class LoginPageState extends State<LoginPage>
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         new TextFormField(
+                          style: TextStyle(color: Colors.black),
                           controller: _usernameController,
                           decoration: new InputDecoration(
                             labelText: "Enter Email",
@@ -98,6 +100,7 @@ class LoginPageState extends State<LoginPage>
                           keyboardType: TextInputType.emailAddress,
                         ),
                         new TextFormField(
+                          style: TextStyle(color: Colors.black),
                           controller: _passwordController,
                           decoration: new InputDecoration(
                             labelText: "Enter Password",
