@@ -71,7 +71,7 @@ class LoginPageState extends State<LoginPage>
         children: <Widget>[
           new Image(
             image: new AssetImage("assets/Whirl-flyer.png"),
-            alignment: Alignment(0,-0,5),
+            alignment: Alignment(0,-0.5),
           ),
           new Column(
             mainAxisAlignment: MainAxisAlignment.center,
