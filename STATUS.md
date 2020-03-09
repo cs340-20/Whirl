@@ -20,6 +20,8 @@ proposal.md due to our team members needing to take more time to get started and
 
 ## **Technology**
 
+As far as system architecture goes, our tech
+
 System architecture, details about design and implementation. What were out goals (just look at mileston issues). What works at this point in time? Include screenshots of stuff working. What tests have we run (think login issues etc.) And lastly, what are our goals for the next iteration.
 
 ## **Team**
