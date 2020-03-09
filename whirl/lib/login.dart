@@ -44,7 +44,8 @@ class LoginPageState extends State<LoginPage>
       MaterialButton(
         height: 40.0,
         minWidth: 100.0,
-        color: Colors.teal,
+        // color: Colors.teal,
+        color: Color(0xFF00A8E8),
         textColor: Colors.white,
         child: new Text("Login"),
         onPressed: _performLogin,
@@ -53,7 +54,8 @@ class LoginPageState extends State<LoginPage>
       MaterialButton(
         height: 40.0,
         minWidth: 100.0,
-        color: Colors.teal.shade800,
+        // color: Colors.teal.shade800,
+        color: Color(0xFF00A8E8),
         textColor: Colors.white,
         child: new Text("Don't have an account? Sign Up"),
         onPressed: () => _performSignUp(),
@@ -66,7 +68,7 @@ class LoginPageState extends State<LoginPage>
   Widget build(BuildContext context) {
     return new Scaffold(
       resizeToAvoidBottomInset : false,
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xFF003459),
       body: new Stack(
         fit: StackFit.expand,
         children: <Widget>[
@@ -85,14 +87,15 @@ class LoginPageState extends State<LoginPage>
                       primarySwatch: Colors.teal,
                       inputDecorationTheme: new InputDecorationTheme(
                           labelStyle: new TextStyle(
-                              color: Colors.teal, fontSize: 20.0))),
+                              // color: Colors.teal, fontSize: 20.0))),
+                              color: Colors.white, fontSize: 20.0))),                        
                   child: new Container(
                     padding: const EdgeInsets.all(60.0),
                     child: new Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         new TextFormField(
-                          style: TextStyle(color: Colors.black),
+                          style: TextStyle(color: Colors.white),
                           controller: _usernameController,
                           decoration: new InputDecoration(
                             labelText: "Enter Email",
@@ -100,7 +103,7 @@ class LoginPageState extends State<LoginPage>
                           keyboardType: TextInputType.emailAddress,
                         ),
                         new TextFormField(
-                          style: TextStyle(color: Colors.black),
+                          style: TextStyle(color: Colors.white),
                           controller: _passwordController,
                           decoration: new InputDecoration(
                             labelText: "Enter Password",

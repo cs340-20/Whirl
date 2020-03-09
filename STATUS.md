@@ -19,6 +19,8 @@ Explain difference of schedule from proposal.md. Why did we do this, and what di
 
 ## **Technology**
 
+As far as system architecture goes, our tech
+
 System architecture, details about design and implementation. What were out goals (just look at mileston issues). What works at this point in time? Include screenshots of stuff working. What tests have we run (think login issues etc.) And lastly, what are our goals for the next iteration.
 
 ## **Team**
