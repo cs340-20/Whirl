@@ -15,7 +15,8 @@ haven't made any significant changes to our initial design requirements, and are
 
 ## **Customer Value**
 
-Explain difference of schedule from proposal.md. Why did we do this, and what did it do. Did it cause any issues?
+Currently, we have altered the schdedule from the 
+proposal.md due to our team members needing to take more time to get started and to familiarize themselves more with the framework. Also, we used more time to plan out the structure of our application with wireframes and a workflow chart. Allocating more time to that, we have been able to create a minimum viable product with more structure and organization and less bugs. The difference of the schedule has not caused any issues for our team or the project. It has helped us visualize our goals and how to split up the work.   
 
 ## **Technology**
 
