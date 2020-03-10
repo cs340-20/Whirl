@@ -20,7 +20,7 @@ proposal.md due to our team members needing to take more time to get started and
 
 ## **Technology**
 
-As far as system architecture goes, our tech
+As far as system architecture goes, the tech stack we initally planned to use is still the same. We have not run into too many issues with incompatibilty, or just the outright inability to complete a task. ...
 
 System architecture, details about design and implementation. What were out goals (just look at mileston issues). What works at this point in time? Include screenshots of stuff working. What tests have we run (think login issues etc.) And lastly, what are our goals for the next iteration.
 
