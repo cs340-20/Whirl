@@ -17,17 +17,17 @@ class MyApp extends StatelessWidget{
         navigatorObservers: [
           FirebaseAnalyticsObserver(analytics: FirebaseAnalytics())
         ],
-      home: LoginPage(),
-      routes: {
-        '/LoginPage': (BuildContext context) => LoginPage(),
-        '/HomePage': (BuildContext context) => HomePage(),
-      },
-      theme: ThemeData(
-          brightness: Brightness.light,
-          primarySwatch: Colors.teal,
-          inputDecorationTheme: InputDecorationTheme(
-              labelStyle: TextStyle(
-                  color: Colors.teal, fontSize: 20.0)))
+        home: LoginPage(),
+        routes: {
+          '/LoginPage': (BuildContext context) => LoginPage(),
+          '/HomePage': (BuildContext context) => HomePage(),
+        },
+        theme: ThemeData(
+            brightness: Brightness.light,
+            primarySwatch: Colors.teal,
+            inputDecorationTheme: InputDecorationTheme(
+                labelStyle: TextStyle(
+                    color: Colors.teal, fontSize: 20.0)))
     );
 
   }

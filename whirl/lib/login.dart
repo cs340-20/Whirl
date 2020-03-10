@@ -62,8 +62,9 @@ class LoginPageState extends State<LoginPage> with SingleTickerProviderStateMixi
               _loading? CircularProgressIndicator() : FlatButton(color: Theme.of(context).primaryColor,
                   onPressed: () => _newUser? _signUp() : _signIn(),
                   child: Padding(padding: EdgeInsets.all(10), child: Text(_newUser? "Sign Up" : "Login", style: TextStyle(fontSize: 18)))),
-              Align(alignment: Alignment.bottomLeft, child: OutlineButton(onPressed: () => setState(() => _newUser = !_newUser), child: _newUser? Text("Already a user? Sign In!") : Text("New user? Sign Up!")))
+              Padding(padding: EdgeInsets.all(30)),
             ]),
+              Align(alignment: Alignment.bottomLeft, child: OutlineButton(onPressed: () => setState(() => _newUser = !_newUser), child: _newUser? Text("Already a user? Sign In!") : Text("New user? Sign Up!")))
             ])));
   }
 

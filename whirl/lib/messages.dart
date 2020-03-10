@@ -10,7 +10,7 @@ class MessagesPageState extends State<MessagesPage> {
   @override
   Widget build(BuildContext context) {
     return Center(
-        child: Text("Messages Page"),
-      );
+      child: Text("Messages Page"),
+    );
   }
 }

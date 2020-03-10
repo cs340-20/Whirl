@@ -10,7 +10,7 @@ class RidesPageState extends State<RidesPage> {
   @override
   Widget build(BuildContext context) {
     return Center(
-        child: Text("Rides Page"),
-      );
+      child: Text("Rides Page"),
+    );
   }
 }
