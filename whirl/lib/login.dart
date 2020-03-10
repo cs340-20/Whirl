@@ -1,160 +1,109 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+import 'package:location/location.dart';
 import 'package:whirl/home.dart';
-import 'auth.dart';
 
-void main() => runApp(new MyApp());
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new MaterialApp(
-        home: new LoginPage(),
-        theme: new ThemeData(primarySwatch: Colors.blue));
-  }
-}
+FirebaseUser user;
 
 class LoginPage extends StatefulWidget {
+  final GlobalKey<FormState> _formKey = GlobalKey(debugLabel: "Form Key");
+  final GlobalKey<ScaffoldState> _scaffoldKey  = GlobalKey(debugLabel: "Scaffold Key");
   @override
   State createState() => new LoginPageState();
 }
 
-class LoginPageState extends State<LoginPage>
-    with SingleTickerProviderStateMixin {
-  Widget buttons;
-  bool loading = false;
-
-  AnimationController _iconanimationController;
-  Animation<double> _iconAnimation;
-
-  final _usernameController = TextEditingController();
-  final _passwordController = TextEditingController();
+class LoginPageState extends State<LoginPage> with SingleTickerProviderStateMixin {
+  String _email, _password, _name;
+  bool _loading, _newUser;
 
   @override
   void initState() {
     super.initState();
-    _iconanimationController = new AnimationController(
-        vsync: this, duration: new Duration(milliseconds: 600));
-    _iconAnimation = new CurvedAnimation(
-        parent: _iconanimationController, curve: Curves.bounceOut);
-    _iconAnimation.addListener(() => this.setState(() {}));
-    _iconanimationController.forward();
-    buttons = Column(children: <Widget>[
-      MaterialButton(
-        height: 40.0,
-        minWidth: 100.0,
-        color: Colors.teal,
-        textColor: Colors.white,
-        child: new Text("Login"),
-        onPressed: _performLogin,
-        splashColor: Colors.redAccent,
-      ),
-      MaterialButton(
-        height: 40.0,
-        minWidth: 100.0,
-        color: Colors.teal.shade800,
-        textColor: Colors.white,
-        child: new Text("Don't have an account? Sign Up"),
-        onPressed: () => _performSignUp(),
-        splashColor: Colors.redAccent,
-      )
-    ]);
+    _loading = false;
+    _newUser = false;
+
+    FirebaseAuth.instance.currentUser().then((value) {
+      user = value;
+      if (user != null) {
+        print("Silently Signed in");
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => HomePage()));
+      }
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      resizeToAvoidBottomInset : false,
-      backgroundColor: Colors.white,
-      body: new Stack(
-        fit: StackFit.expand,
-        children: <Widget>[
-          new Image(
-            image: new AssetImage("assets/WhirlLogo144.png"),
-            alignment: Alignment(0,-0.7),
-          ),
-          new Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-             
-              new Form(
-                child: Theme(
-                  data: new ThemeData(
-                      brightness: Brightness.dark,
-                      primarySwatch: Colors.teal,
-                      inputDecorationTheme: new InputDecorationTheme(
-                          labelStyle: new TextStyle(
-                              color: Colors.teal, fontSize: 20.0))),
-                  child: new Container(
-                    padding: const EdgeInsets.all(60.0),
-                    child: new Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        new TextFormField(
-                          style: TextStyle(color: Colors.black),
-                          controller: _usernameController,
-                          decoration: new InputDecoration(
-                            labelText: "Enter Email",
-                          ),
-                          keyboardType: TextInputType.emailAddress,
-                        ),
-                        new TextFormField(
-                          style: TextStyle(color: Colors.black),
-                          controller: _passwordController,
-                          decoration: new InputDecoration(
-                            labelText: "Enter Password",
-                          ),
-                          keyboardType: TextInputType.text,
-                          obscureText: true,
-                        ),
-                        new Padding(
-                          padding: const EdgeInsets.only(top: 40.0),
-                        ),
-                        loading? CircularProgressIndicator() : buttons,
-                      ],
-                    ),
-                  ),
-                ),
-              )
-            ],
-          )
-        ],
-      ),
-    );
+    return new Scaffold(key: widget._scaffoldKey,
+        backgroundColor: Colors.white,
+        body: Form(key: widget._formKey,
+            child: Padding(padding: EdgeInsets.all(30), child: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: <Widget>[
+              Image(image: AssetImage("assets/Logo1024.png")),
+              _newUser? TextFormField(onChanged: (name) => _name = name,
+                  validator: (name) => name.isEmpty? "Name can't be empty" : null,
+                  decoration: InputDecoration(labelText: "First Name", prefixIcon: Icon(Icons.person))) : Container(),
+              TextFormField(keyboardType: TextInputType.emailAddress, onChanged: (email) => _email = email,
+                  validator: (email) {
+                    if (email.isEmpty) return "Email can't be empty";
+                    else if (email.split(".").last != "edu") return "Must use a university email address";
+                    else return null;
+                  },
+                  decoration: InputDecoration(labelText: "Email", prefixIcon: Icon(Icons.email))),
+              TextFormField(obscureText: true, keyboardType: TextInputType.visiblePassword, onChanged: (password) => _password = password,
+                  validator: (password) => password.isEmpty? "Password can't be empty" : null,
+                  decoration: InputDecoration(labelText: "Password", prefixIcon: Icon(Icons.vpn_key))),
+              _newUser? TextFormField(obscureText: true, keyboardType: TextInputType.visiblePassword,
+                  validator: (passConfirmation) => passConfirmation != _password? "Passwords must match" : null,
+                  decoration: InputDecoration(labelText: "Re-enter Password", prefixIcon: Icon(Icons.vpn_key))) : Container(),
+              _loading? CircularProgressIndicator() : FlatButton(color: Colors.teal,
+                  onPressed: () => _newUser? _signUp() : _signIn(),
+                  child: Padding(padding: EdgeInsets.all(10), child: Text(_newUser? "Sign Up" : "Login", style: TextStyle(fontSize: 18)))),
+              Align(alignment: Alignment.bottomLeft, child: OutlineButton(onPressed: () => setState(() => _newUser = !_newUser), child: _newUser? Text("Already a user? Sign In!") : Text("New user? Sign Up!")))
+            ]),
+            )));
   }
 
-  void _performSignUp() {
-    String email = _usernameController.text;
-    String password = _passwordController.text;
+  void _signIn() async {
+    if (!widget._formKey.currentState.validate()) return;
+    setState(() => _loading = true);
+    print('Sign in attempt: $_email with $_password');
 
-    print('Sign up attempt: $email with $password');
+    await FirebaseAuth.instance.signInWithEmailAndPassword(email: _email, password: _password)
+        .catchError((error) {
+      widget._scaffoldKey.currentState.showSnackBar(SnackBar(backgroundColor: Colors.red, content: Text("A user with that email and password was not found")));
+    });
 
-    signUp(email, password)
-        .then((FirebaseUser user) {
-          if (user != null) Navigator.push(
-            context, MaterialPageRoute(builder: (context) => ListRoute()));
-        })
-        .whenComplete(() => setState(() => loading = false))
-        .catchError((e) => print(e));
+    user = await FirebaseAuth.instance.currentUser();
+    if (user != null) {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => HomePage()));
+    }
 
-    setState(() => loading = true);
+    setState(() => _loading = false);
   }
 
-  void _performLogin() {
-    String email = _usernameController.text;
-    String password = _passwordController.text;
+  void _signUp() async {
+    if (!widget._formKey.currentState.validate()) return;
+    setState(() => _loading = true);
+    print('Sign up attempt: $_email with $_password');
 
-    print('login attempt: $email with $password');
+    await FirebaseAuth.instance.createUserWithEmailAndPassword(email: _email, password: _password)
+        .catchError((error) => print("Error creating user: $error"));
 
-    handleSignIn(email, password)
-        .then((FirebaseUser user) {
-          if (user != null) Navigator.push(
-            context, MaterialPageRoute(builder: (context) => ListRoute()));
-        })
-        .whenComplete(() => setState(() => loading = false))
-        .catchError((e) => print(e));
+    user = await FirebaseAuth.instance.currentUser();
+    if (user != null) {
+      LocationData location = await Location().getLocation();
+      await Firestore.instance.collection("users").document(user.uid).setData({
+        "name": _name,
+        "location": GeoPoint(location.latitude, location.longitude),
+        "rating": 5
+      });
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => HomePage()));
+    } else print("No Authenticated user");
 
-    setState(() => loading = true);
+    setState(() => _loading = false);
   }
 }
