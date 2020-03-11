@@ -8,7 +8,7 @@
 
 ## **Introduction**
 
-With 65 total issues so far, and 60 of them closed, we have achieved a good minimum viable product which
+With 74 total issues so far, and 68 of them closed, we have achieved a good minimum viable product which
 includes many of the core features of the application. This gives us a solid foundation with which we plan build more functionality into, refine, and repeat. As of now, we are able to
 create accounts, login and authenticate users, create "rides" which others can join, and generate a list of these "rides" with the information being pulled from our databases. Overall, we
 haven't made any significant changes to our initial design requirements, and are staying fairly true to our original plan of action.
@@ -19,15 +19,23 @@ Currently, we have altered the schdedule from the proposal.md due to our team me
 
 ## **Technology**
 
-As far as system architecture goes, the tech stack we initally planned to use is still the same, which is Flutter for the framework and firebase for the backend. We have not run into too many issues with incompatibilty, or just the outright inability to complete a task. We have wireframes made for the pages of the application to help with designing each of them and implement their functionality. Some of the goals were setting up and implementing a login page with sign-in and sign-up functionality and error checking. Along with getting a logo design in for the app and building a foundation for the other pages. 
-Currently, we have the login page functionality working and finished the layout of the app so navigation between pages are also working. We have tested the login functionality with firebase and checked if the users' accounts got to the backend. 
-Now, our goals for the next iteration would be to build the rides page, profile page, home page, the messaging page, and notification page. We will split up those pages among the members and hopefully, be able to implement some functionality into it. 
+As far as system architecture goes, the tech stack we initally planned to use is still the same, which is Flutter for the framework and firebase for the backend. We have not run into too many issues with incompatibilty, or just the outright inability to complete a task. We have wireframes made for the pages of the application to help with designing each of them and implement their functionality. Some of the goals were setting up and implementing a login page with sign-in and sign-up functionality and authentication. Along with getting a logo design in for the app and building a foundation for the other pages. 
+</br>Currently, we have the login page functionality working and finished the layout of the app so navigation between pages are also working. We have tested the login functionality with firebase and checked if the users' accounts got to the backend. 
+</br>Now, our goals for the next iteration would be to build the rides page, profile page, home page, the messaging page, and notification page. We will split up those pages among the members and hopefully, be able to implement some functionality into it. 
 
 ## **Team**
 
 What roles did we partake in in this iteration, and do we or do we not expect them to change.
 
+**Tucker:** 
+
+**Matt:** 
+
+**David:** 
+
 **Vicki:** In this iteration, I built the login page for the application and added the input functionality for signing in. I also created the wireframes for each page of the app. 
+
+**Jiuru:** 
 
 ## **Project Management**
 
