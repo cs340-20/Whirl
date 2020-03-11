@@ -10,7 +10,7 @@
 
 With 65 total issues so far, and 60 of them closed, we have achieved a good minimum viable product which
 includes many of the core features of the application. This gives us a solid foundation with which we plan build more functionality into, refine, and repeat. As of now, we are able to
-create accounts, login and authenticate users, create "rides" which others can join, and generate a list of these "rides" with the information being pulled from out databases. Overall, we
+create accounts, login and authenticate users, create "rides" which others can join, and generate a list of these "rides" with the information being pulled from our databases. Overall, we
 haven't made any significant changes to our initial design requirements, and are staying fairly true to our original plan of action.
 
 ## **Customer Value**
