@@ -24,9 +24,11 @@ As far as system architecture goes, the tech stack we initally planned to use is
 </br>Now, our goals for the next iteration would be to build the rides page, profile page, home page, the messaging page, and notification page. We will split up those pages among the members and hopefully, be able to implement some functionality into it. 
 
 <p>
-<img src="Common/Screenshots/login.jpg" alt="Login Page" width="150"/> <img src="Common/Screenshots/signup.jpg" alt="Signup Page" width="150"/> <img src="Common/Screenshots/profile.jpg" alt="Profile Page" width="150"/> <img src="Common/Screenshots/map.jpg" alt="Home Page" width="150"/> </br>
+<img src="Common/Screenshots/login.jpg" alt="Login Page" width="150"/> <img src="Common/Screenshots/signup.jpg" alt="Signup Page" width="150"/> <img src="Common/Screenshots/profile.jpg" alt="Profile Page" width="150"/> </br>
 </p>
+
 <p>
+<img src="Common/Screenshots/map.jpg" alt="Home Page" width="150"/> 
 <img src="Common/Screenshots/messages.jpg" alt="Chat Page" width="150"/>
 <img src="Common/Screenshots/rides.jpg" alt="Rides Page" width="150"/> 
 <img src="Common/Screenshots/notifications.jpg" alt="Alert Page" width="150"/>
@@ -43,7 +45,7 @@ What roles did we partake in in this iteration, and do we or do we not expect th
 
 **David:** 
 
-**Vicki:** In this iteration, I built the login page for the application and added the input functionality for signing in. I also created the wireframes for each page of the app. 
+**Vicki:** In this iteration, I built the login page for the application and added the input functionality for signing in. I also created the wireframes for each page of the app. I expect my role to continue in the front-end development, testing, and helping with layout of the app.
 
 **Jiuru:** 
 
@@ -60,12 +62,12 @@ For the most part, we managed to stay on track with our schedule, but we might h
 **Week of 3/9**  - Iteratively test and refine each change<br/>
 **Week of 3/16** - Iteratively test and refine each change<br/>
 **Week of 3/23** - Iteratively test and refine solution<br/>
-**Week of 3/30** - Iteratively test and refine solution and add finishing touches to the product<br/>
+**Week of 3/30** - Iteratively test and refine solution and add finishing touches<br/>
 **Week of 4/6**  - Complete project implementation</br>
 
 ## **Reflection**
 
 What went well? What didn't? What will we do differently?
 
-We planned out a basic workflow of the app and the wiresframes which gave us a good idea of how to get the front-end development of it built and how we wanted the app to function. It helped us break down each issue and assign it to the members at a steady pace. Overall, we were able to get a good minimum viable product completed and a solid foundation of the app at a timely fashion thanks to everyone's contributions.  
+We planned out a basic workflow of the app and the wiresframes which gave us a good idea of how to get the front-end development of it built and how we wanted the app to function. It helped us break down each issue and assign it to the members at a steady pace. Overall, we were able to get a good minimum viable product completed and a solid foundation of the app at a timely fashion thanks to everyone's contributions and participation.  
 
