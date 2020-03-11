@@ -20,10 +20,10 @@ dependencies:
   flutter:
     sdk: flutter
   firebase_core: ^0.4.4+2 # ^0.4.0+9 # Added the dependency for the Firebase Core Flutter SDK - TM  
-  firebase_analytics: ^5.0.11 # ^5.0.2  # Added the dependency for the FlutterFire plugin for Google Analytics, might be able to remove this - TM
+  firebase_analytics: ^5.0.11 # ^5.0.2  # Added the dependency for the FlutterFire plugin for Google Analytics - TM
   firebase_auth: ^0.15.5+2 # ^0.15.2 # Added for Firebase Auth - TM
   google_sign_in: ^4.1.4 # Added for google signin - TM
-  cloud_firestore: ^0.13.4 # Added for Firestore DB -TM this causes app to not compile.
+  cloud_firestore: ^0.13.4 # Added for Firestore DB -TM
   location: ^2.5.3
 
   # The following adds the Cupertino Icons font to your application.
@@ -51,6 +51,7 @@ flutter:
      - assets/Whirl-flyer.png
      - assets/WhirlLogo144.png
      - assets/Logo1024.png
+     - assets/Avatars/TuckerBitmoji.jpg
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
