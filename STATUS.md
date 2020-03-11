@@ -23,6 +23,10 @@ As far as system architecture goes, the tech stack we initally planned to use is
 </br>Currently, we have the login page functionality working and finished the layout of the app so navigation between pages are also working. We have tested the login functionality with firebase and checked if the users' accounts got to the backend. 
 </br>Now, our goals for the next iteration would be to build the rides page, profile page, home page, the messaging page, and notification page. We will split up those pages among the members and hopefully, be able to implement some functionality into it. 
 
+## **Wireframes**
+![Home Page](Common/Wireframes/Home_Page.png)
+![Request Page](Common/Wireframes/Request_Page.png)
+
 ## **Team**
 
 What roles did we partake in in this iteration, and do we or do we not expect them to change.
@@ -50,7 +54,7 @@ For the most part, we managed to stay on track with our schedule, but we might h
 **Week of 3/9**  - Iteratively test and refine each change<br/>
 **Week of 3/16** - Iteratively test and refine each change<br/>
 **Week of 3/23** - Iteratively test and refine solution<br/>
-**Week of 3/30** - Iteratively test and refine solution and add finishing touches to the completed product<br/>
+**Week of 3/30** - Iteratively test and refine solution and add finishing touches to the product<br/>
 **Week of 4/6**  - Complete project implementation</br>
 
 ## **Reflection**
