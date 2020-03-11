@@ -15,14 +15,13 @@ haven't made any significant changes to our initial design requirements, and are
 
 ## **Customer Value**
 
-Currently, we have altered the schdedule from the 
-proposal.md due to our team members needing to take more time to get started and to familiarize themselves more with the framework. Also, we used more time to plan out the structure of our application with wireframes and a workflow chart. Allocating more time to that, we have been able to create a minimum viable product with more structure and organization and less bugs. The difference of the schedule has not caused any issues for our team or the project. It has helped us visualize our goals and how to split up the work.   
+Currently, we have altered the schdedule from the proposal.md due to our team members needing to take more time to get started and to familiarize themselves more with the framework. Also, we used more time to plan out the structure of our application with wireframes and a workflow chart. Allocating more time to that, we have been able to create a minimum viable product with more structure and organization and less bugs. The difference of the schedule has not caused any issues for our team or the project. It has helped us visualize our goals and how to split up the work.   
 
 ## **Technology**
 
-As far as system architecture goes, the tech stack we initally planned to use is still the same. We have not run into too many issues with incompatibilty, or just the outright inability to complete a task. ...
-
-System architecture, details about design and implementation. What were out goals (just look at mileston issues). What works at this point in time? Include screenshots of stuff working. What tests have we run (think login issues etc.) And lastly, what are our goals for the next iteration.
+As far as system architecture goes, the tech stack we initally planned to use is still the same, which is Flutter for the framework and firebase for the backend. We have not run into too many issues with incompatibilty, or just the outright inability to complete a task. We have wireframes made for the pages of the application to help with designing each of them and implement their functionality. Some of the goals were setting up and implementing a login page with sign-in and sign-up functionality and error checking. Along with getting a logo design in for the app and building a foundation for the other pages. 
+Currently, we have the login page functionality working and finished the layout of the app so navigation between pages are also working. We have tested the login functionality with firebase and checked if the users' accounts got to the backend. 
+Now, our goals for the next iteration would be to build the rides page, profile page, home page, the messaging page, and notification page. We will split up those pages among the members and hopefully, be able to implement some functionality into it. 
 
 ## **Team**
 
@@ -30,7 +29,17 @@ What roles did we partake in in this iteration, and do we or do we not expect th
 
 ## **Project Management**
 
-Are we on schedule? Provide updates to schedule since beginning of semester
+For the most part, we stayed on track with our schedule, but we might have to push back the completion date to the month of April.
+
+**Week of 1/27** - Become familiar with Flutter/Dart, polish proposal<br/>
+**Week of 2/3**  - Continue Learning/Experimenting with Flutter and Dart<br/>
+**Week of 2/10** - Design and implement a minimum viable system<br/>
+**Week of 2/17** - Iteratively improve minimum viable system<br/>
+**Week of 2/24** - Research potential updates/additional functionality<br/>
+**Week of 3/2**  - Choose new features we want, and begin implementation<br/>
+**Week of 3/9**  - Iteratively test and refine each change<br/>
+**Week of 3/16** - Iteratively test and refine solution<br/>
+**Week of 3/23** - Complete project implementation<br/>
 
 ## **Reflection**
 
