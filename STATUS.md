@@ -24,11 +24,7 @@ As far as system architecture goes, the tech stack we initally planned to use is
 </br>Now, our goals for the next iteration would be to build the rides page, profile page, home page, the messaging page, and notification page. We will split up those pages among the members and hopefully, be able to implement some functionality into it. 
 
 <p>
-<img src="Common/Screenshots/login.jpg" alt="Login Page" width="150"/>
-<img src="Common/Screenshots/signup.jpg" alt="Signup Page" width="150"/>
-<img src="Common/Screenshots/profile.jpg" alt="Profile Page" width="150"/>
-<img src="Common/Screenshots/map.jpg" alt="Home Page" width="150"/> 
-</br>
+<img src="Common/Screenshots/login.jpg" alt="Login Page" width="150"/> <img src="Common/Screenshots/signup.jpg" alt="Signup Page" width="150"/> <img src="Common/Screenshots/profile.jpg" alt="Profile Page" width="150"/> <img src="Common/Screenshots/map.jpg" alt="Home Page" width="150"/> </br>
 </p>
 <p>
 <img src="Common/Screenshots/messages.jpg" alt="Chat Page" width="150"/>
