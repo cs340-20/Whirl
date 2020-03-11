@@ -24,7 +24,8 @@ As far as system architecture goes, the tech stack we initally planned to use is
 </br>Now, our goals for the next iteration would be to build the rides page, profile page, home page, the messaging page, and notification page. We will split up those pages among the members and hopefully, be able to implement some functionality into it. 
 
 ## **Wireframes**
-![Home Page](Common/Wireframes/Home_Page.png =20x40) ![Request Page](Common/Wireframes/Request_Page.png =20x40)
+![Home Page](Common/Wireframes/Home_Page.png =20x40) 
+![Request Page](Common/Wireframes/Request_Page.png =20x40)
 
 ## **Team**
 
