@@ -27,9 +27,11 @@ Now, our goals for the next iteration would be to build the rides page, profile 
 
 What roles did we partake in in this iteration, and do we or do we not expect them to change.
 
+**Vicki:** In this iteration, I built the login page for the application and added the input functionality for signing in. I also created the wireframes for each page of the app. 
+
 ## **Project Management**
 
-For the most part, we stayed on track with our schedule, but we might have to push back the completion date to the month of April.
+For the most part, we managed to stay on track with our schedule, but we might have to push back the completion date to the month of April since we are still working on building the pages.
 
 **Week of 1/27** - Become familiar with Flutter/Dart, polish proposal<br/>
 **Week of 2/3**  - Continue Learning/Experimenting with Flutter and Dart<br/>
@@ -38,9 +40,14 @@ For the most part, we stayed on track with our schedule, but we might have to pu
 **Week of 2/24** - Research potential updates/additional functionality<br/>
 **Week of 3/2**  - Choose new features we want, and begin implementation<br/>
 **Week of 3/9**  - Iteratively test and refine each change<br/>
-**Week of 3/16** - Iteratively test and refine solution<br/>
-**Week of 3/23** - Complete project implementation<br/>
+**Week of 3/16** - Iteratively test and refine each change<br/>
+**Week of 3/23** - Iteratively test and refine solution<br/>
+**Week of 3/30** - Iteratively test and refine solution and add finishing touches to the completed product<br/>
+**Week of 4/6**  - Complete project implementation</br>
 
 ## **Reflection**
 
 What went well? What didn't? What will we do differently?
+
+We planned out a basic workflow of the app and the wiresframes which gave us a good idea of how to get the front-end development of it built and how we wanted the app to function. It helped us break down each issue and assign it to the members at a steady pace. Overall, we were able to get a good minimum viable product completed and a solid foundation of the app at a timely fashion thanks to everyone's contributions.  
+
