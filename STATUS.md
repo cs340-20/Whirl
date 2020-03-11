@@ -23,9 +23,15 @@ As far as system architecture goes, the tech stack we initally planned to use is
 </br>Currently, we have the login page functionality working and finished the layout of the app so navigation between pages are also working. We have tested the login functionality with firebase and checked if the users' accounts got to the backend. 
 </br>Now, our goals for the next iteration would be to build the rides page, profile page, home page, the messaging page, and notification page. We will split up those pages among the members and hopefully, be able to implement some functionality into it. 
 
-## **Wireframes**
-![Home Page](Common/Wireframes/Home_Page.png =20x40) 
-![Request Page](Common/Wireframes/Request_Page.png =20x40)
+<img src="Common/Screenshots/login.jpg" alt="Login Page" width="100"/>
+<img src="Common/Screenshots/signup.jpg" alt="Signup Page" width="100"/>
+<img src="Common/Screenshots/profile.jpg" alt="Profile Page" width="100"/>
+<img src="Common/Screenshots/map.jpg" alt="Home Page" width="100"/> 
+</br>
+<img src="Common/Screenshots/messages.jpg" alt="Chat Page" width="100"/>
+<img src="Common/Screenshots/rides.jpg" alt="Rides Page" width="100"/> 
+<img src="Common/Screenshots/notifications.jpg" alt="Alert Page" width="100"/>
+</br>
 
 ## **Team**
 
