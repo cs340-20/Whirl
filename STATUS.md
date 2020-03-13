@@ -37,7 +37,7 @@ As far as system architecture goes, the tech stack we initally planned to use is
 
 ## **Team**
 
-**Tucker:** I created a firebase system for the app's authentication from the login page and did the routing from there to the home page. I also built the profile page and got it to display some mock data. I expect my role to continue in both the front-end and back-end development and testing.  
+**Tucker:** In this sprint, I used Firebase Authentication for the app's authentication from the login page, and I also used Firebase's database service for user and rides information. I set up the initial screen routing from the login page to the home page. And lastly, towards the end of this sprint, I built the profile page and got it to display some mock data. I expect my role to continue in both the front-end and back-end development and testing.  
 
 **Matt:** I built the home page of the app along with other pages as a foundation for the other members to have a place to start. I also set up the navigation bar to the other pages and improved the sign in functionality. It included silent login where users who signed up/ logged in would stay logged in whenever they reopen the app and a log out option. I expect my role to continue in both the front-end and back-end development and testing. 
 
