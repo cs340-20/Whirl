@@ -37,13 +37,11 @@ As far as system architecture goes, the tech stack we initally planned to use is
 
 ## **Team**
 
-What roles did we partake in in this iteration, and do we or do we not expect them to change.
+**Tucker:** I created a firebase system for the app's authentication from the login page and did the routing from there to the home page. I also built the profile page and got it to display some mock data. I expect my role to continue in both the front-end and back-end development and testing.  
 
-**Tucker:** 
+**Matt:** I built the home page of the app along with other pages as a foundation for the other members to have a place to start. I also set up the navigation bar to the other pages and improved the sign in functionality. It included silent login where users who signed up/ logged in would stay logged in whenever they reopen the app and a log out option. I expect my role to continue in both the front-end and back-end development and testing. 
 
-**Matt:** 
-
-**David:** 
+**David:** I worked on creating the logo for the app and implemented it in the login screen. While doing so, I fixed some minor bugs in the login screen. I expect to continue my role in the front-end development and help out in other areas of the project.
 
 **Vicki:** In this iteration, I built the login page for the application and added the input functionality for signing in. I also created the wireframes for each page of the app. I expect my role to continue in the front-end development, testing, and helping with layout of the app.
 
@@ -67,7 +65,12 @@ For the most part, we managed to stay on track with our schedule, but we might h
 
 ## **Reflection**
 
-What went well? What didn't? What will we do differently?
+We planned out a basic workflow of the app and the wiresframes which gave us a good idea of how to get the front-end development of it built and how we wanted the app to function. It helped us break down each issue and assign it to the members at a steady pace. Overall, we were able to get a good minimum viable product completed and a solid foundation of the app at a timely fashion thanks to everyone's contributions and participation.
+</br>
 
-We planned out a basic workflow of the app and the wiresframes which gave us a good idea of how to get the front-end development of it built and how we wanted the app to function. It helped us break down each issue and assign it to the members at a steady pace. Overall, we were able to get a good minimum viable product completed and a solid foundation of the app at a timely fashion thanks to everyone's contributions and participation.  
+Throughout the project, the aspects that didn't go well would be building the project and running into unfamiliar errors/bugs when trying to implement and test a feature. However, we have been able to overcome it through researching and learning from trial and error.
+</br> 
+
+As for now, we will continue to perform the same roles and implement the features we have planned out in a similar fashion.
+
 
