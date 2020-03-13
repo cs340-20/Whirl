@@ -47,7 +47,7 @@ What roles did we partake in in this iteration, and do we or do we not expect th
 
 **Vicki:** In this iteration, I built the login page for the application and added the input functionality for signing in. I also created the wireframes for each page of the app. I expect my role to continue in the front-end development, testing, and helping with layout of the app.
 
-**Jiuru:** 
+**Jiuru:** I worked on the sign up page and further error checking for user input and authentication like if an already existing user with an account were to click the sign up button. I expect to continue to help with the front end as well as expanding to other areas of the project. 
 
 ## **Project Management**
 
