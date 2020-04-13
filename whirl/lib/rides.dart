@@ -1,10 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-class Ride {
-  String Dest;
-}
-
 class RidesPage extends StatefulWidget {
   @override
   State createState() => new RidesPageState();
@@ -15,9 +11,6 @@ class RidesPageState extends State<RidesPage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      // appBar: new AppBar(
-      //   title: new Text("Current Rides"),
-      // ),
       body: ListPage(),
     );
   }
@@ -52,7 +45,7 @@ class _ListPageState extends State<ListPage> {
           );
         }
         else {
-          ListView.builder(
+          return ListView.builder(
             itemCount: snapshot.data.length, //length of document array returned from future -TM
             itemBuilder: (_, index) {
               return ListTile(
@@ -60,7 +53,7 @@ class _ListPageState extends State<ListPage> {
               );
           });
         }
-        return Text(snapshot.data[1].data["DestAsString"]);
+        // return Text("TuckeSr");
       }),
     );
   }
