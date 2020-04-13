@@ -33,6 +33,10 @@ class _ListPageState extends State<ListPage> {
     return qn.documents;
   }
 
+  navigateToDetail (DocumentSnapshot post) {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => DetailPage(post: post)));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -41,7 +45,7 @@ class _ListPageState extends State<ListPage> {
         builder: (_, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return Center (
-            child: Text("Loading"), //do circprogressindic instead -TM
+            child: CircularProgressIndicator(),
           );
         }
         else {
@@ -50,16 +54,21 @@ class _ListPageState extends State<ListPage> {
             itemBuilder: (_, index) {
               return ListTile(
                 title: Text(snapshot.data[index].data["DestAsString"]),
+                onTap: () => navigateToDetail(snapshot.data[index]),
               );
           });
         }
-        // return Text("TuckeSr");
       }),
     );
   }
 }
 
 class DetailPage extends StatefulWidget {
+
+  final DocumentSnapshot post;
+
+  DetailPage({this.post});
+
   @override
   _DetailPageState createState() => _DetailPageState();
 }
@@ -68,7 +77,12 @@ class _DetailPageState extends State<DetailPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      
+      child: Card(
+        child: ListTile(
+          title: Text(widget.post.data["DestAsString"]),
+          subtitle: Text(widget.post.data["Details"]),
+        ),
+      )
     );
   }
 }
