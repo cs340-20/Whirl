@@ -63,7 +63,7 @@ class _ListPageState extends State<ListPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget> [
                     Text("Details: " + snapshot.data[index].data["Details"]),
-                    Text("Contact: " + "8655561061"),
+                    Text("Contact: " + "123-456-7890"),
                   ]
                 ),
                 isThreeLine: true,
