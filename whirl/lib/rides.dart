@@ -52,18 +52,15 @@ class _ListPageState extends State<ListPage> {
           return ListView.builder(
             itemCount: snapshot.data.length, //length of document array returned from future -TM
             itemBuilder: (_, index) {
-              // return ListTile(
-              //   title: Text(snapshot.data[index].data["DestAsString"]),
-              //   onTap: () => navigateToDetail(snapshot.data[index]),
-              // );
               return ListTile(
                 leading: Image(image: AssetImage("assets/Logo1024.png")),
-                title: Text(snapshot.data[index].data["DestAsString"]),
+                title: Text(snapshot.data[index].data["Source"] + " to " + snapshot.data[index].data["DestAsString"]),
                 subtitle: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget> [
+                    Text("Driver Name: " + snapshot.data[index].data["Name"]),
                     Text("Details: " + snapshot.data[index].data["Details"]),
-                    Text("Contact: " + "123-456-7890"),
+                    Text("Contact: " + snapshot.data[index].data["ContactNum"]),
                   ]
                 ),
                 isThreeLine: true,
