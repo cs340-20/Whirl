@@ -6,16 +6,6 @@ class ProfilePage extends StatefulWidget {
   State createState() => new ProfilePageState();
 }
 
-// class ProfilePageState extends State<ProfilePage> {
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Center(
-//       child: Text("Profile Page"),
-//     );
-//   }
-// }
-
 final List<String> entries = <String>['A', 'B', 'C', 'D', 'E', 'F', 'G'];
 final List<int> colorCodes = <int>[100, 200, 300, 400, 500, 600, 700];
 
