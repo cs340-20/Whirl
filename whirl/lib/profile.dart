@@ -1,4 +1,6 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:whirl/rides.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -19,11 +21,23 @@ final List<String> entries = <String>['A', 'B', 'C', 'D', 'E', 'F', 'G'];
 final List<int> colorCodes = <int>[100, 200, 300, 400, 500, 600, 700];
 
 class ProfilePageState extends State<ProfilePage> {
+
+  Future getRides() async {
+    //instantiate firestore instance -TM
+    var firestore = Firestore.instance;
+    
+    QuerySnapshot qn = await firestore.collection("Rides").getDocuments();
+
+    //essentially returns an array of the document snapshots -TM
+    return qn.documents;
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
-        physics: const NeverScrollableScrollPhysics(),
+        // physics: const NeverScrollableScrollPhysics(),
         children: <Widget>[
           Column(
             mainAxisAlignment: MainAxisAlignment.end,
@@ -117,36 +131,67 @@ class ProfilePageState extends State<ProfilePage> {
               ),
             ],
           ),
-          // Row(
-          //   children: <Widget>[
-          //     Text('User\'s ride list will go here'),
-          //   ],
-          // ),
-          Row(
-            children: <Widget>[
-              Expanded(
-                child: SizedBox(
-                  height: 160,
-                  child: ListView.separated(
-                    physics: const AlwaysScrollableScrollPhysics(),
-                    padding: const EdgeInsets.all(8),
-                    itemCount: entries.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      return Container(
-                        height: 50,
-                        color: Colors.teal[colorCodes[index]],
-                        child: Center(child: Text('Ride ${entries[index]}')),
-                      );
-                    },
-                    separatorBuilder: (BuildContext context, int index) => const Divider(),
-                  ),
-                ),
+          Card(
+            child: ListTile(
+              leading: Image(image: AssetImage("assets/Logo1024.png")),
+              title: Text('Charlotte to Knoxville'),
+              subtitle: Text(
+                'Leaving 12:00pm on April 23'
               ),
-            ],
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          )
+              trailing: Icon(Icons.more_vert),
+              isThreeLine: true,
+            ),
+          ), 
+          Card(
+            child: ListTile(
+              leading: Image(image: AssetImage("assets/Logo1024.png")),
+              title: Text('UT Campus to West Town Mall'),
+              subtitle: Text(
+                'Leaving 1:00pm on April 21'
+              ),
+              trailing: Icon(Icons.more_vert),
+              isThreeLine: true,
+            ),
+          ),
+          Card(
+            child: ListTile(
+              leading: Image(image: AssetImage("assets/Logo1024.png")),
+              title: Text('Farragut to Maryville'),
+              subtitle: Text(
+                'Leaving 9:00am on April 26'
+              ),
+              trailing: Icon(Icons.more_vert),
+              isThreeLine: true,
+            ),
+          ),
+          Card(
+            child: ListTile(
+              leading: Image(image: AssetImage("assets/Logo1024.png")),
+              title: Text('Halls to Sevierville'),
+              subtitle: Text(
+                'Leaving 11:00an on April 25'
+              ),
+              trailing: Icon(Icons.more_vert),
+              isThreeLine: true,
+            ),
+          ),                                       
         ],
       ),
     );
   }
+
+  Widget buildImages() {
+    return Padding(
+      padding: EdgeInsets.only(top: 15.0, left: 15.0, right: 15.0),
+      child: Container(
+          height: 200.0,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15.0),
+              image: DecorationImage(
+                  image: AssetImage('assets/Logo1024.png'), fit: BoxFit.cover))),
+    );
+  }
+
+
+  
 }
