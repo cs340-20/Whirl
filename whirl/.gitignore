@@ -1,5 +1,6 @@
 # Miscellaneous
-AndroidManifest.xml
+AndroidManifest.xml 
+# Above is to To hide GCP API Key - TM
 *.class
 *.log
 *.pyc
