@@ -33,10 +33,6 @@ class _ListPageState extends State<ListPage> {
     return qn.documents;
   }
 
-  navigateToDetail (DocumentSnapshot post) {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => DetailPage(post: post)));
-  }
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -68,30 +64,6 @@ class _ListPageState extends State<ListPage> {
           });
         }
       }),
-    );
-  }
-}
-
-class DetailPage extends StatefulWidget {
-
-  final DocumentSnapshot post;
-
-  DetailPage({this.post});
-
-  @override
-  _DetailPageState createState() => _DetailPageState();
-}
-
-class _DetailPageState extends State<DetailPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Card(
-        child: ListTile(
-          title: Text(widget.post.data["DestAsString"]),
-          subtitle: Text(widget.post.data["Details"]),
-        ),
-      )
     );
   }
 }
