@@ -47,7 +47,7 @@
 - After completing our minimum viable system, our main goals were to introduce the list of actual rides to the user, as well as giving them a way to add to this list. Besides this,we wanted to add other features such as a profile and a map page. We successfully implemented the rides list functionality, added a profile page with basic functionality, and added a basic map as well. Below are screenshots of the several screens of the application.
 
 <p>
-<img src="Common/screenshotsv2/login.jpg" alt="Login Page" width="150"/> <img src="Common/screenshotsv2/signup.jpg" alt="Signup Page" width="150"/> <img src="Common/screenshotsv2/map.jpg" alt="Profile Page" width="150"/> </br>
+<img src="Common/screenshotsv2/launchericon.jpg" alt="Launcher Icon" width="150"/> <img src="Common/screenshotsv2/login.jpg" alt="Login Page" width="150"/> <img src="Common/screenshotsv2/signup.jpg" alt="Signup Page" width="150"/> <img src="Common/screenshotsv2/map.jpg" alt="Profile Page" width="150"/> </br>
 </p>
 
 <p>
