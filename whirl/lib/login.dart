@@ -41,7 +41,7 @@ class LoginPageState extends State<LoginPage> with SingleTickerProviderStateMixi
               Image(image: AssetImage("assets/Logo1024.png")),
               _newUser? TextFormField(onChanged: (name) => _name = name,
                   validator: (name) => name.isEmpty? "Name can't be empty" : null,
-                  decoration: InputDecoration(labelText: "First Name", prefixIcon: Icon(Icons.person))) : Container(),
+                  decoration: InputDecoration(labelText: "Name", prefixIcon: Icon(Icons.person))) : Container(),
               Padding(padding: EdgeInsets.all(10)),
               TextFormField(keyboardType: TextInputType.emailAddress, onChanged: (email) => _email = email,
                   validator: (email) {
