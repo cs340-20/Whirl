@@ -63,7 +63,7 @@
 - Most of the testing for this application was relatively straight forward. Most of it consisted of making sure authentication was correct, and that the user was able to view and add rides to the app. We did all of this iteratively as each feature was added, in addition to regression testing with each new addition. Below is a table which summarizes our tests and their results.
 
 <p>
-<img src="Common/TestingResultsTabulated.png" alt="Testing Results" width="400"/>
+<img src="Common/TestingResultsTabulated.PNG" alt="Testing Results" width="400"/>
 </p>
 
 ## **Team**
