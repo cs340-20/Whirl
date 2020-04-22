@@ -44,7 +44,7 @@
 
 ### Changes from status reports
 
-- After completing our minimum viable system, our main goals were to introduce the list of actual rides to the user, as well as giving them a way to add to this list. Besides this,we wanted to add other features such as a profile and a map page. We successfully implemented the rides list functionality, added a profile page with basic functionality, and added a basic map as well. Below are screenshots of the several screens of the application.
+- After completing our minimum viable system, our main goals were to introduce the list of actual rides to the user, as well as giving them a way to add to this list. Besides this,we wanted to add other features such as a profile and a map page. We successfully implemented the rides list functionality, added a profile page with basic functionality, and added a basic map as well. Below are gifs and screenshots of several components of our application.
 
 <p>
 <img src="Common/screenshotsv2/Videos/openapp.gif" alt="Launcher Icon" width="150"/>
@@ -79,7 +79,7 @@
 
 ## **Team**
 
-- Every person on our team had tasks to work on throughout the course of the project. While the commits to the repository may seem lopsided, much work has been done elsewhere along the way. While it would have probably been better to switch up our roles more often, they have been mostly static.
+- Every person on our team had tasks to work on throughout the course of the project. We did stick to most people having the same or a similar rolea throughout the entirety of the project, and this worked well for us. The commits to the repository may seem lopsided, but much, much work has been done elsewhere along the way. We did stick to most people having the same or a similar rolea throughout the entirety of the project, and this worked well for us.
 
 ## **Project Management**
 
