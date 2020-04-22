@@ -1,5 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:whirl/rideCard.dart';
 
 class RidesPage extends StatefulWidget {
   @override
@@ -7,91 +10,26 @@ class RidesPage extends StatefulWidget {
 }
 
 class RidesPageState extends State<RidesPage> {
+  List list;
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      body: ListPage(),
-    );
-  }
-}
-
-class ListPage extends StatefulWidget {
-  @override
-  _ListPageState createState() => _ListPageState();
-}
-
-class _ListPageState extends State<ListPage> {
-
-  Future getRides() async {
-    //instantiate firestore instance -TM
-    var firestore = Firestore.instance;
-    
-    QuerySnapshot qn = await firestore.collection("Rides").getDocuments();
-
-    //essentially returns an array of the document snapshots -TM
-    return qn.documents;
-  }
-
-  navigateToDetail (DocumentSnapshot post) {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => DetailPage(post: post)));
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: FutureBuilder(
-        future: getRides(),
-        builder: (_, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return Center (
-            child: CircularProgressIndicator(),
-          );
-        }
-        else {
-          return ListView.builder(
-            itemCount: snapshot.data.length, //length of document array returned from future -TM
-            itemBuilder: (_, index) {
-              return ListTile(
-                leading: Image(image: AssetImage("assets/Logo1024.png")),
-                title: Text(snapshot.data[index].data["Source"] + " to " + snapshot.data[index].data["DestAsString"]),
-                subtitle: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget> [
-                    Text("Driver Name: " + snapshot.data[index].data["Name"]),
-                    Text("Details: " + snapshot.data[index].data["Details"]),
-                    Text("Contact: " + snapshot.data[index].data["ContactNum"]),
-                  ]
-                ),
-                isThreeLine: true,
-              );
-          });
-        }
-      }),
-    );
-  }
-}
-
-class DetailPage extends StatefulWidget {
-
-  final DocumentSnapshot post;
-
-  DetailPage({this.post});
-
-  @override
-  _DetailPageState createState() => _DetailPageState();
-}
-
-class _DetailPageState extends State<DetailPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Card(
-        child: ListTile(
-          title: Text(widget.post.data["DestAsString"]),
-          subtitle: Text(widget.post.data["Details"]),
-        ),
-      )
-    );
+    return Padding(padding: EdgeInsets.all(25), child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: <Widget>[
+      Center(child: Padding(padding: EdgeInsets.all((15)), child: Text('Avaliable Rides', style: TextStyle(fontSize: 24)))),
+      Expanded(child: FutureBuilder<FirebaseUser>(future: FirebaseAuth.instance.currentUser(), builder: (context, user) => user.hasData? StreamBuilder<QuerySnapshot>(
+        stream: Firestore.instance.collection("rides").snapshots(),
+        builder: (_, snapshot) => snapshot.hasData? ListView.builder(
+            itemCount: snapshot.data.documents.length, //length of document array returned from future -TM
+            itemBuilder: (_, index) =>
+                RideCard(document: snapshot.data.documents[index], trailing: snapshot.data.documents[index].data['assigned'].contains(user.data.uid)? null : IconButton(icon: Icon(Icons.add),
+                    onPressed: () {
+                      List assignees = snapshot.data.documents[index].data['assigned'];
+                      assignees.add(user.data.uid);
+                      snapshot.data.documents[index].reference.setData({"assigned": assignees}, merge: true);
+                    }))
+        ) : Center (
+          child: CircularProgressIndicator(),
+        )
+    ) : Container()))]));
   }
 }

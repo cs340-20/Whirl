@@ -25,6 +25,12 @@ dependencies:
   google_sign_in: ^4.1.4 # Added for google signin - TM
   cloud_firestore: ^0.13.4 # Added for Firestore DB -TM
   location: ^2.5.3
+  google_maps_flutter: ^0.5.11 # Added for Map - TM
+  image_picker: ^0.6.5
+  image_cropper: ^1.2.1
+  firebase_storage: ^3.1.5
+  geocoder: ^0.2.1
+  datetime_picker_formfield: ^1.0.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -33,6 +39,12 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: "^0.7.3"
+  
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/WhirlLogo144.png"
 
 
 # For information on the generic Dart part of this file, see the
@@ -51,7 +63,7 @@ flutter:
      - assets/Whirl-flyer.png
      - assets/WhirlLogo144.png
      - assets/Logo1024.png
-     - assets/Avatars/TuckerBitmoji.jpg
+     - assets/DefaultAvatar.jpg
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
