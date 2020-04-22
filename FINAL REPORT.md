@@ -62,7 +62,6 @@
 </p>
 
 <p>
-<img src="Common/screenshotsv2/profile.png" alt="Profile Page" width="150"/> 
 <img src="Common/screenshotsv2/rides.png" alt="Rides Page" width="150"/> 
 <img src="Common/screenshotsv2/addride.png" alt="Add Rides Page" width="150"/>
 <img src="Common/screenshotsv2/profile.png" alt="Profile Page" width="150"/> 
