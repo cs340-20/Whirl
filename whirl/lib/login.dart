@@ -7,8 +7,8 @@ import 'package:location/location.dart';
 FirebaseUser user;
 
 class LoginPage extends StatefulWidget {
-  final GlobalKey<FormState> _formKey = GlobalKey(debugLabel: "Form Key");
-  final GlobalKey<ScaffoldState> _scaffoldKey  = GlobalKey(debugLabel: "Scaffold Key");
+  final GlobalKey<FormState> _formKey = GlobalKey(debugLabel: "Login Form");
+  final GlobalKey<ScaffoldState> _scaffoldKey  = GlobalKey(debugLabel: "Login Scaffold");
   @override
   State createState() => LoginPageState();
 }
@@ -22,14 +22,6 @@ class LoginPageState extends State<LoginPage> with SingleTickerProviderStateMixi
     super.initState();
     _loading = false;
     _newUser = false;
-
-    FirebaseAuth.instance.currentUser().then((value) {
-      user = value;
-      if (user != null) {
-        print("Silently Signed in");
-        Navigator.popAndPushNamed(context, '/HomePage');
-      }
-    });
   }
 
   @override
@@ -98,7 +90,8 @@ class LoginPageState extends State<LoginPage> with SingleTickerProviderStateMixi
       await Firestore.instance.collection("users").document(user.uid).setData({
         "name": _name,
         "location": GeoPoint(location.latitude, location.longitude),
-        "rating": 5
+        "rating": 5,
+        "rides": 0,
       });
       Navigator.popAndPushNamed(context, '/HomePage');
     } else print("No Authenticated user");

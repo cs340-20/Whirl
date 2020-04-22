@@ -7,16 +7,7 @@ class MapPage extends StatefulWidget {
 }
 
 class MapPageState extends State<MapPage> {
-
-  // @override
-  // Widget build(BuildContext context) {
-  //   return Center(
-  //       child: Text("Map Page"),
-  //     );
-  // }
-
   GoogleMapController mapController;
-
   final LatLng _center = const LatLng(35.9606, -83.9207);
 
   void _onMapCreated(GoogleMapController controller) {

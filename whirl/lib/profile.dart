@@ -7,6 +7,9 @@ import 'package:flutter/material.dart';
 import 'package:geocoder/geocoder.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:whirl/login.dart';
+import 'package:whirl/newRide.dart';
+import 'package:whirl/rideCard.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -26,155 +29,106 @@ class ProfilePageState extends State<ProfilePage> {
     getImage().then((img) => setState(() => profileImg = img.image));
   }
 
-  Future getRides() async {
-    //instantiate firestore instance -TM
-    var firestore = Firestore.instance;
-    
-    QuerySnapshot qn = await firestore.collection("Rides").getDocuments();
-
-    //essentially returns an array of the document snapshots -TM
-    return qn.documents;
-  }
-
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ListView(
-        // physics: const NeverScrollableScrollPhysics(),
+    return Column(
         children: <Widget>[
-          Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: <Widget>[
-              Container(
-                padding: EdgeInsets.only(
-                  top: 15,
-                ),
-                child: GestureDetector(
-                    onTap: () => setImage().then((file) => setState(() => profileImg = Image.file(file).image)),
-                    child: CircleAvatar(backgroundImage: profileImg, radius: 50, backgroundColor: Colors.transparent)
-                ),
-              ),
-              SizedBox(height: 25.0),
-              FutureBuilder<String>(future: getName(), builder: (context, snapshot) => snapshot.hasData? Text(
-                snapshot.data,
-                style: TextStyle(
-                  fontFamily: 'Montserrat',
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                ),
-              ) : Container()),
-              SizedBox(height: 4.0),
-              FutureBuilder<String>(future: getLocation(), builder: (context, snapshot) => snapshot.hasData? Text(
-                snapshot.data,
-                style: TextStyle(
-                  fontFamily: 'Montserrat',
-                  color: Colors.grey
-                ),
-              ) : Container()),
-              Padding(
-                // padding: EdgeInsets.all(30),
-                padding: EdgeInsets.only(
-                  left: 100,
-                  top: 30,
-                  right: 100,
-                  bottom: 30,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          Container(
+            padding: EdgeInsets.only(
+              top: 15,
+            ),
+            child: GestureDetector(
+                onTap: () => setImage().then((file) => setState(() => profileImg = Image.file(file).image)),
+                child: CircleAvatar(backgroundImage: profileImg, radius: 50, backgroundColor: Colors.transparent)
+            ),
+          ),
+          SizedBox(height: 25.0),
+          FutureBuilder<String>(future: getName(), builder: (context, snapshot) => snapshot.hasData? Text(
+            snapshot.data,
+            style: TextStyle(
+              fontFamily: 'Montserrat',
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ) : Container()),
+          SizedBox(height: 4.0),
+          FutureBuilder<String>(future: getLocation(), builder: (context, snapshot) => snapshot.hasData? Text(
+            snapshot.data,
+            style: TextStyle(
+                fontFamily: 'Montserrat',
+                color: Colors.grey
+            ),
+          ) : Container()),
+          Padding(
+            // padding: EdgeInsets.all(30),
+            padding: EdgeInsets.only(
+              left: 100,
+              top: 30,
+              right: 100,
+              bottom: 30,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          '15',
+                    FutureBuilder<FirebaseUser>(future: FirebaseAuth.instance.currentUser(), builder: (context, user) => user.hasData?
+                    StreamBuilder<DocumentSnapshot>(stream: Firestore.instance.collection('users').document(user.data.uid).snapshots(),
+                        builder: (context, stream) => Text(
+                          stream.data['rides'].toString(),
                           style: TextStyle(
-                            fontFamily: 'Montserrat',
-                            fontWeight: FontWeight.bold,
+                              fontFamily: 'Montserrat',
+                              fontSize: 18
                           ),
-                        ),
-                        SizedBox(height: 5.0),
-                        Text(
-                          'TRIPS',
-                          style: TextStyle(
-                            fontFamily: 'Montserrat',
-                            color: Colors.grey,
-                          ),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        FutureBuilder<String>(future: getRating(), builder: (context, snapshot) => snapshot.hasData? Text(
-                          snapshot.data,
-                          style: TextStyle(
-                            fontFamily: 'Montserrat',
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ) : Container()),
-                        SizedBox(height: 5.0),
-                        Text(
-                          'RATING',
-                          style: TextStyle(
-                            fontFamily: 'Montserrat',
-                            color: Colors.grey,
-                          ),
-                        ),
-                      ],
+                        )
+                    ) : Container()),
+                    SizedBox(height: 5.0),
+                    Text(
+                      'TRIPS',
+                      style: TextStyle(
+                        fontFamily: 'Montserrat',
+                        color: Colors.grey,
+                      ),
                     ),
                   ],
                 ),
-              ),
-            ],
-          ),
-          Card(
-            child: ListTile(
-              leading: Image(image: AssetImage("assets/Logo1024.png")),
-              title: Text('Charlotte to Knoxville'),
-              subtitle: Text(
-                'Leaving 12:00pm on April 23'
-              ),
-              trailing: Icon(Icons.more_vert),
-              isThreeLine: true,
-            ),
-          ), 
-          Card(
-            child: ListTile(
-              leading: Image(image: AssetImage("assets/Logo1024.png")),
-              title: Text('UT Campus to West Town Mall'),
-              subtitle: Text(
-                'Leaving 1:00pm on April 21'
-              ),
-              trailing: Icon(Icons.more_vert),
-              isThreeLine: true,
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    FutureBuilder<int>(future: getRating(), builder: (context, snapshot) => snapshot.hasData?
+                    Row(children: List.generate(5, (rating) => Icon(rating < snapshot.data ? Icons.star : Icons.star_border, size: 15)))
+                        : Container()),
+                    SizedBox(height: 5.0),
+                    Text(
+                      'RATING',
+                      style: TextStyle(
+                        fontFamily: 'Montserrat',
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
           ),
-          Card(
-            child: ListTile(
-              leading: Image(image: AssetImage("assets/Logo1024.png")),
-              title: Text('Farragut to Maryville'),
-              subtitle: Text(
-                'Leaving 9:00am on April 26'
-              ),
-              trailing: Icon(Icons.more_vert),
-              isThreeLine: true,
-            ),
-          ),
-          Card(
-            child: ListTile(
-              leading: Image(image: AssetImage("assets/Logo1024.png")),
-              title: Text('Halls to Sevierville'),
-              subtitle: Text(
-                'Leaving 11:00an on April 25'
-              ),
-              trailing: Icon(Icons.more_vert),
-              isThreeLine: true,
-            ),
-          ),                                       
-        ],
-      ),
+          Divider(),
+          Padding(padding: EdgeInsets.only(top: 15, bottom: 5), child: Text('Your Rides', style: TextStyle(fontSize: 24))),
+          Expanded(child: StreamBuilder<QuerySnapshot>(stream: Firestore.instance.collection('rides').where("assigned", arrayContains: user.uid).snapshots(),
+              builder: (context, stream) => ListView(
+                  children: stream.hasData? List.generate(stream.data.documents.length,
+                          (index) => RideCard(document: stream.data.documents[index], trailing: Row(mainAxisSize: MainAxisSize.min, children: <Widget>[
+                        IconButton(icon: Icon(Icons.check), onPressed: () {
+                          Firestore.instance.collection('rides').document(stream.data.documents[index].documentID).delete();
+                          setState(() {
+                            FirebaseAuth.instance.currentUser().then((user) => Firestore.instance.collection('users').document(user.uid).get().then(
+                                    (document) => Firestore.instance.collection('users').document(user.uid).setData({'rides': document.data['rides']+1}, merge: true)));
+                          });
+                        }),
+                        IconButton(icon: Icon(Icons.close), onPressed: () => Firestore.instance.collection('rides').document(stream.data.documents[index].documentID).delete())
+                      ]))) : List())
+          ))
+        ]
     );
   }
 
@@ -192,16 +146,21 @@ class ProfilePageState extends State<ProfilePage> {
     return Image.network(img);
   }
 
+  Future<Stream<DocumentSnapshot>> getUserDoc() async {
+    var user = await FirebaseAuth.instance.currentUser();
+    return Firestore.instance.collection('users').document(user.uid).snapshots();
+  }
+
   Future<String> getName() async {
     var user = await FirebaseAuth.instance.currentUser();
     var doc = await Firestore.instance.collection('users').document(user.uid).get();
     return doc.data['name'];
   }
 
-  Future<String> getRating() async {
+  Future<int> getRating() async {
     var user = await FirebaseAuth.instance.currentUser();
     var doc = await Firestore.instance.collection('users').document(user.uid).get();
-    return doc.data['rating'].toString();
+    return doc.data['rating'];
   }
 
   Future<String> getLocation() async {
