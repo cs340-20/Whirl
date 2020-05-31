@@ -1,75 +1,91 @@
 # **Whirl**
-### Team Name: Whirl 
-### Team Members: Tucker Miles, Matt Mohandiss, David Nguyen, Vicki Tang, Jiuru Zhu
 
+## **Team Name: Whirl**
 
+## **Team Number: 4**
 
+## **Team Members: Tucker Miles, Matt Mohandiss, David Nguyen, Vicki Tang, Jiuru Zhu**
 
 ## **Introduction**
+
 ### What is Whirl?
+
 - Whirl is a ride-sharing app for college students. We plan to helps students find rides around campus or home for break.
+
 ### Team Whirl's Motivation
+
 - Bad parking conditions on campus
 - Some students don't have cars
 - Help students afford trips
 - Keeps students from being alone on long trips
 - Safety
-### Market Context
-- Whirl is not a typical ride-sharing app. Whirl is more based on carpooling for a student-only community. We will make transportation more affordable for our users, and plan to make safety one of our main priorities.
-### Our Background
-- As of now, we have all been through the same computer science classes (through COSC 302), so we have a good base knowledge of general programming practices and procedures. One of us has full-stack experience with mobile development. We also have some general experience with data-basing, front-end and back-end development, and building desktop applications. Specifically, only one of us has a high level of experience with Flutter and Firebase, while the rest of us are currently getting familiar with the technology.
 
+### Brief Description of Our Approach
 
+- Towards the beginning of this project, we chose Flutter and Firebase for our technology stack, as one of us has a high level of experience with it, and for the others, the upfront cost of learning Flutter is relatively low when compared to numerous other frameworks. We did an immense amount of issue tracking throughout the entirety of the project, being sure to assign issues for nearly every task done and allowing us to individually work on small components of the greater project. This approach was very effective for us, as we now have a functional application. In the end, there is more work to be done, more features to be added, and occasional things to be improve, but we were successful in adding the pieces of functionality which were fundamental to our original plan.
 
 ## **Customer Value**
+
+- No changes to customer value from previous report iterations. Below is customer value from our project proposal.
+
 ### Customer Need
+
 - Our primary customers will be college students who want safe rides back to campus while on breaks, and to/from events around campus. We are doing this because we want to prioritize the safety of college students, and take into consideration the cost it takes to travel.
+
 ### Proposed Solution
+
 - From the customer's point of view, our solution will take the anonymity out of carpooling, as it will be a student-only network. They will be able to get safe rides to and from their home and events around campus. When compared to typical ride-sharing services, Whirl will be more cost-effective and inclusive to students.
+  
 ### Measures of Success
+
 - We will know our app is successful if students are able to get free/cheap rides when they need them and feel safe while doing so.
 
+## **Technology**
 
+### Changes from status reports
 
+- After completing our minimum viable system, our main goals were to introduce the list of actual rides to the user, as well as giving them a way to add to this list. Besides this,we wanted to add other features such as a profile and a map page. We successfully implemented the rides list functionality, added a profile page with basic functionality, and added a basic map as well. Below are gifs and screenshots of several components of our application.
 
-## **Proposed Solution & Technology**
-### Technology We Will Deliver
-  - From the developer's point of view, our software will offer an easy way for students to find rides to and from any point of interest. Users will be able to post places they are going, and accept additional riders under their own circumstances. Users will be able to find rides, and view the driver's and other rider's profiles before joining them. Users will be able to rate the driver and the rider on their experiences.
-   - A minimal viable system for us is to create a restricted community in which only students can offer rides to and from places of interests for other students. Once we achieve this, we can add features such as profiling functionality, ride restrictions, and driving incentives.
-  - As far as testing goes, we will be creating numerous users and running through all of the applications processes numerous times. Each time new functionality is implemented, regression testing will be performed in order to maintain stability of the application as a whole.
-### Technology We Will Use
-  - As far as our technology goes, we plan to use Flutter and Firebase. Flutter is a framework used for mobile development which is backed by Google's Dart programming language. Firebase is a platform which provides many useful services in order to build functionality into our application.
-  - We chose to use Flutter because our stack will natively compile into both an Android and an iOS application. If it weren't for this, we would have to maintain two completely separate code-bases if we wanted to have cross-platform functionality. In addition to this, Flutter has an ability to "hot-reload" in the development process, keeping us from having to rebuild the app in its entirety each time a change is made, and this makes for quick, easy incremental development. Another advantage of using this technology is the quick and uncomplicated discoverability of a vast amount of packages. As an example, we will use some sort of maps/location plugin, and finding one that will work for us is easy due to Flutter's central package repository. And lastly, as far as development environments go, we each have our own preferences, ranging from Visual Studio Code to IntelliJ IDEA.
+<p>
+<img src="Common/screenshotsv2/Videos/openapp.gif" alt="Launcher Icon" width="150"/>
+<img src="Common/screenshotsv2/Videos/signin.gif" alt="Launcher Icon" width="150"/>
+<img src="Common/screenshotsv2/Videos/addride.gif" alt="Launcher Icon" width="150"/>
+</br>
+</p>
 
+<p>
+<img src="Common/screenshotsv2/launcherscreen.png" alt="Launcher Icon" width="150"/>
+<img src="Common/screenshotsv2/login.png" alt="Login Page" width="150"/>
+<img src="Common/screenshotsv2/signup.png" alt="Signup Page" width="150"/>
+<img src="Common/screenshotsv2/map.png" alt="Map Page" width="150"/> 
+</br>
+</p>
 
+<p>
+<img src="Common/screenshotsv2/rides.png" alt="Rides Page" width="150"/> 
+<img src="Common/screenshotsv2/addride.png" alt="Add Rides Page" width="150"/>
+<img src="Common/screenshotsv2/profile.png" alt="Profile Page" width="150"/> 
+</br>
+</p>
 
-## **Section 4: Team**
-### Skills
-- One of us has full-stack experience with mobile development. We also have some general experience with data-basing, front-end and back-end development, and building desktop applications. Specifically, only one of us has a high level of experience with Flutter and Firebase, while the rest of us are currently getting familiar with the technology.
-### Roles
-- We plan to rotate roles throughout the development process. Doing this will allow us to all gain some familiarity with each component of the development process. These roles include, but are not limited to: project manager, back-end developer, front-end developer, researcher, tester.
+### Testing
 
+- Most of the testing for this application was relatively straight forward. Most of it consisted of making sure authentication was correct, and that the user was able to view and add rides to the app. We did all of this iteratively as each feature was added, in addition to regression testing with each new addition. Below is a table which summarizes our tests and their results.
 
+<p>
+<img src="Common/TestingResultsTabulated.PNG" alt="Testing Results" width="400"/>
+</p>
 
-## **Section 5: Project Management**
-### Schedule
-  - We do believe completion of our system is feasible, and we have no specific set meeting times. We will generally meet face-to-face in class, and utilize discord to work as a group while away from class. A broad schedule overview is as follows:
-  <br/>
+## **Team**
 
-**Week of 1/27** - Become familiar with Flutter/Dart, polish proposal<br/>
-**Week of 2/3**  - Continue Learning/Experimenting with Flutter and Dart<br/>
-**Week of 2/10** - Design and implement a minimum viable system<br/>
-**Week of 2/17** - Iteratively improve minimum viable system<br/>
-**Week of 2/24** - Research potential updates/additional functionality<br/>
-**Week of 3/2**  - Choose new features we want, and begin implementation<br/>
-**Week of 3/9**  - Iteratively test and refine each change<br/>
-**Week of 3/16** - Iteratively test and refine solution<br/>
-**Week of 3/23** - Complete project implementation<br/>
+- Every person on our team had tasks to work on throughout the course of the project. We did stick to most people having the same or a similar rolea throughout the entirety of the project, and this worked well for us. The commits to the repository may seem lopsided, but much, much work has been done elsewhere along the way. We did stick to most people having the same or a similar rolea throughout the entirety of the project, and this worked well for us.
 
-### Constraints
-- The largest constraints on this platform are time and ability. Working time to build our application into our existing schedule will have to be done, and the skill level of the team will have to be leveled throughout the course of the project
-- Ethically, there will always be moral concerns with accepting/offering rides with/to people you are not completely familiar with. Also, privacy issues...
-### Resources
-- All of the resources we plan to utilize are easily accessible.
-### Descoping
-- If our full functionality cannot be implemented, an application with reduced functionality will still be able to achieve the basic idea of our concept. In order to achieve that, all we would need is a way for students to more or less "tack" their rides to a public clipboard. From this clipboard, students can select rides, or add another note saying they are willing to drive. However, these features lie at the core of our application, and we have a high level of confidence that they can be implemented using the technologies we desire.
+## **Project Management**
+
+- While we did complete everything that was required for the core functionality of our application, there is much more to be done that we would've loved to get a chance to look at. Most of this just comes down to time. Learning a completely new framework that you've never seen before is hard, and being able to work on your own with it is even harder. Adjusting our timeline to better enable everybody to work productively was necessary, and that is why we fell behind on a few aspects of our application. In addition to this, the unforeseen circumstances that everyone in the world is dealing with right now have also contributed to delays.
+
+## **Reflection**
+
+- For this iteration, things were a bit more unsystematic than prior sprints. With all of the craziness associated with all of the things happening at the current time, things got a bit off track. Our schedule fell apart a bit, but we've been able to recover and complete what we needed to accomplish in this iteration. Aside from that, we have closed numerous vital issues over the course of just a few short weeks. In addition to this, testing has gone very well, and it has not been necessary for us to pour valuable time into fixing bugs. Team management has been fairly consistent throughout the whole project. We've all been doing the tasks we've been assigned to do, and everything has been getting completed in a timely manner. Actually, the past couple weeeks have been the most productive weeks of the entire project, and it's very rewarding to see everything coming together.
+
+- Lastly, we most definitely consider our project a success. While it is most definitely not a "complete" app, we have something that is very valuable to us. While we were fortunate enough to complete an actual working application with some of the features we wanted, Whirl has given us all much more than that. Developing an application from the ground up, and treating it as a real-life project in the workplace has given us all valuable skills that will be applied later in life. In addition to this, this project is an excellent addition to all of our portfolios, and is an even better talking point for future interviews.
